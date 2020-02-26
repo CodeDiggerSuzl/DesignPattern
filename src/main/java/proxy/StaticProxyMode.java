@@ -3,7 +3,7 @@ package proxy;
 /**
  * @author suzl demo of static proxy mode
  */
-public class ProxyMode {
+public class StaticProxyMode {
     /**
      * common behaviour
      */
@@ -15,19 +15,26 @@ public class ProxyMode {
     }
 }
 
-class Proxy implements ProxyMode.Rent {
+class StaticProxy implements StaticProxyMode.Rent {
     /**
      * rent house
      */
     public void rentHouse() {
         System.out.println("Rent house from proxy");
     }
+
+    /**
+     * do other stuff besides rent
+     */
+    public void doSthElse() {
+        System.out.println("Rent from proxy");
+    }
 }
 
 /**
  * LandLord only want to rent house
  */
-class LandLord implements ProxyMode.Rent {
+class LandLord implements StaticProxyMode.Rent {
     /**
      * rent house
      */
